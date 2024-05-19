@@ -1,0 +1,150 @@
+.loginContainer::before{
+    content: '';
+    position: absolute;
+    width: 2000px;
+    height: 2000px;
+    border-radius: 50%;
+    background: #505AB6;
+    top: 8%;
+    right: 48%;
+    transform: translateY(-50%);
+    z-index: 6;
+    transition: 1.8s ease-in-out;
+}
+
+.signInUp{
+    grid-template-columns: 1fr;
+    transition: 1s 0.7s ease-in-out;
+}
+
+.panels-container{
+    grid-template-columns: repeat(2 , 1fr);
+    grid-template-rows: 1fr 2fr 1fr;
+}
+
+.left-panel{
+    pointer-events: all;
+    padding: 3rem 17% 2rem 12%;
+}
+.right-panel{
+    pointer-events: none;
+    padding: 3rem 12% 2rem 17%;
+}
+
+.right-panel .content, .right-panel img{
+    transform: translateX(800px);
+}
+
+/* ANIMATION */
+.signUpMode .left-panel .imagePanel,
+.signUpMode .left-panel .content{
+    transform: translateX(-800px);
+}
+.signUpMode .right-panel .imagePanel,
+.signUpMode .right-panel .content{
+    transform: translateX(0px);
+}
+
+.signUpMode:before{
+    transform: translate(100%, -50%);
+}
+
+.content {
+    transition: .9s .6s ease-in-out;
+}
+
+.imagePanel {
+    transition: 1.1s .4s ease-in-out;
+}
+
+.signUpMode .left-panel{
+    pointer-events: none;
+}
+.signUpMode .right-panel{
+    pointer-events: all;
+}
+
+.signUpMode .signInUp{
+    left: 25%;
+}
+
+.signUpMode .signForm.signIn{
+    z-index: 1;
+    opacity: 0;
+}
+.signUpMode .signForm.signUp{
+    z-index: 2;
+    opacity: 1;
+
+}
+
+@media ( max-width: 950px){
+    .loginContainer::before{
+        width: 1500px;
+        height: 1500px;
+        left: 40%;
+        bottom: 60%;
+        transform: translateX(-50%);
+        right: initial;
+        top: initial;
+        transition: 2s ease-in-out;
+    }
+
+    .signInUp{
+        transform: translate(-50%,-100%);
+        transition: 1s 0.8s ease-in-out;
+    }
+
+    .panels-container{
+
+        grid-template-columns: 1fr;
+    }
+
+    .left-panel{
+        grid-row: 1/2;
+    }
+
+    .right-panel{
+        grid-row: 3/4;
+    }
+
+    .right-panel .content, .right-panel img{
+        transform: translateY(300px);
+    }
+
+    .imagePanel{
+        transition: 0.9s 0.6s ease-in-out;
+    }
+    .signUpMode::before{
+        transform: translate(-50%,100%);
+        bottom: 32%;
+        right: initial;
+    }
+    .content{
+        transition: 0.9s 0.8s ease-in-out;
+    }
+
+    .signUpMode .left-panel .imagePanel,
+    .signUpMode .left-panel .content{
+        transform: translateY(-300px);
+    }
+
+    .signUpMode .signInUp{
+        top: 5%;
+        transform: translate(-50%,0);
+        left: 50%;
+    }
+
+}
+
+@media ( max-width: 600px){
+    .loginContainer::before{
+
+        left: 30%;
+        bottom: 68%;
+    }
+
+    .signUpMode::before{
+        transform: translate(-50%,120%);
+    }
+}

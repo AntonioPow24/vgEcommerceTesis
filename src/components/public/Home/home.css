@@ -1,0 +1,10 @@
+
+
+/* ProductCard que esta en el HOME page */
+.marketingCard{
+    background: rgb(212,212,212);
+    background: -moz-linear-gradient(90deg, rgb(212, 212, 212) 0%, rgba(84,191,225,0.8995973389355743) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(212,212,212,1) 0%, rgba(84,191,225,0.8995973389355743) 100%);
+    background: linear-gradient(90deg, rgba(212,212,212,1) 0%, rgba(84,191,225,0.8995973389355743) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#dfdfdf",endColorstr="#54bfe1",GradientType=1);
+}

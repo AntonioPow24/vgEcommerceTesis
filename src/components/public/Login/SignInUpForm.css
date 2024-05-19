@@ -1,0 +1,22 @@
+.signForm {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 0 5rem;
+    overflow: hidden;
+    transition: 0.2s 0.7s ease-in-out;
+}
+
+.signForm.signIn{
+    z-index: 2;
+}
+
+.signForm.signUp {
+    z-index: 1;
+    opacity: 0;
+}
+
+@media ( max-width: 600px){
+    .signForm {
+        padding: 1rem;
+    }
+}

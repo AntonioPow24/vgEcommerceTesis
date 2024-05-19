@@ -1,0 +1,31 @@
+
+
+.inputContainer input:focus ~ .labelInput,
+.inputContainer input:valid ~ .labelInput{
+    transition: all 0.3s ease;
+    transform: translateY(-25px) translateX(-2px);
+    color:#4E57A6;
+    font-size: 16px;
+
+
+}
+
+.inputContainer input:invalid ~ .labelInput{
+    transition: all 0.3s ease;
+}
+
+
+.inputContainer input:focus + .labelInput .restOfInput,
+.inputContainer input:valid + .labelInput .restOfInput{
+    transition: all 0.3s;
+    opacity: 0;
+}
+
+.textAreaForm::placeholder{
+    color:#636363be;  
+}
+
+.textAreaForm{
+    outline: none;
+    border-radius: 6px;
+}

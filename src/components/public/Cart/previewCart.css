@@ -1,0 +1,48 @@
+
+.previewCartContainer{
+    animation: rightToLeft  0.18s  ease-in-out forwards;
+}
+
+
+@keyframes rightToLeft{
+    0%{
+        transform: translateX(500px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+.previewCartItem:not(:nth-last-child(1)){
+    border-bottom: 1px solid #a7a7a74d;
+}
+
+
+
+/* Estilo de la barra de desplazamiento */
+/* Webkit (Chrome, Safari, etc.) */
+.previewCartMain::-webkit-scrollbar {
+    width: 8px; 
+  }
+  
+  /* Color de fondo de la barra de desplazamiento */
+  .previewCartMain::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Color del pulgar (el control deslizante) */
+  .previewCartMain::-webkit-scrollbar-thumb {
+    background: #505AB6;
+    border-radius: 8px;
+
+  }
+  
+  /* Hover effect para el pulgar */
+  .previewCartMain::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+

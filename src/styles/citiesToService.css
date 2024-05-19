@@ -1,0 +1,48 @@
+
+.firstBubble {
+    animation: firstBubble 6s infinite ease-in-out;
+}
+
+.secondBubble {
+    animation: secondBubble 4s infinite ease-in-out;   
+}
+
+.thirdBubble {
+    animation: thirdBubble 5s infinite ease-in-out;
+}
+
+@keyframes firstBubble {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(60px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes secondBubble {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes thirdBubble {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(40px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}

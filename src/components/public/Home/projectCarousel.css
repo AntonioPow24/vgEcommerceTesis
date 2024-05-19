@@ -1,0 +1,74 @@
+.thumbItem , .buttonArrow{
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.projectItem::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(0,0,0,0.6),transparent);
+    z-index: 2;
+
+}
+
+
+.projectItem{
+    z-index: 1;
+}
+
+.projectItem .content .description{
+    transform: translateY(50px);
+    filter:blur(20px);
+    opacity:0;
+    animation: showContent 0.3s 0.3s linear 1 forwards;
+}
+
+
+.projectItem img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showImage 0.5s linear 1 forwards;
+}
+
+@keyframes showContent {
+    to{
+        transform: translateY(0px);
+        filter:blur(0px);
+        opacity:1;
+    }
+
+}
+@keyframes showImage {
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+}
+
+.thumbnail .thumbItem{
+    overflow: hidden;
+    animation: showThumbNail 0.3s linear 1 forwards;
+}
+
+
+@keyframes showThumbNail{
+    from{
+        width: 0;
+        opacity: 0;
+    }
+}
+
+
+
+
