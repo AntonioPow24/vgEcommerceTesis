@@ -15,13 +15,17 @@ const LoginContainer = ({ closeLoginContainer }) => {
       id:1,
       type:'text',
       placeholder:'Nombre de Usuario',
-      iconClass: 'fas fa-user'
+      iconClass: 'fas fa-user',
+      name:'userName',
+      autoComplete: 'username'
     },
     {
       id:2,
       type:'password',
       placeholder:'Contraseña',
-      iconClass: 'fa-solid fa-lock'
+      iconClass: 'fa-solid fa-lock',
+      name:'password',
+      autoComplete: 'current-password'
     },
   ]
 
@@ -30,19 +34,25 @@ const LoginContainer = ({ closeLoginContainer }) => {
       id:1,
       type:'text',
       placeholder:'Nombre de Usuario',
-      iconClass: 'fas fa-user'
+      iconClass: 'fas fa-user',
+      name:'userName',
+      autoComplete: 'username' 
     },
     {
       id:2,
       type:'text',
       placeholder:'Correo de usuario',
-      iconClass: 'fas fa-envelope'
+      iconClass: 'fas fa-envelope',
+      name:'email',
+      autoComplete: 'email'
     },
     {
       id:3,
       type:'password',
       placeholder:'Contraseña',
-      iconClass: 'fa-solid fa-lock'
+      iconClass: 'fa-solid fa-lock',
+      name:'password',
+      autoComplete: 'new-password'
     },
   ]
 

@@ -29,6 +29,7 @@ module.exports = {
         'footerBg':'#05090B',
         'bgContactHeader':'#4E57A6',
         'formContactBg':'#DDE1E2',
+        'projectBg':'#43424256',
 
       },
     },

@@ -48,7 +48,7 @@ const ProjectsCarousel = ({projectList}) => {
 
                             <div className="content absolute top-0 left-0 w-full  text-center z-10">
                                 <div className="description  text-6xl 685:text-4xl pt-7 text-text-white">
-                                    <span>{project.title}</span>
+                                    <span className='capitalize'>{project.title}</span>
                                 </div>
 
                             </div>

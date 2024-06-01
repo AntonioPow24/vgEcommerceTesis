@@ -3,6 +3,10 @@
     backdrop-filter: blur(50px);
 }
 
+.navLinkActive{
+    color: #54BFE1;
+}
+
 .navLinksResponsive::after{
     content: '';
     position: absolute;

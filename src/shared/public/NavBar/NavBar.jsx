@@ -1,7 +1,7 @@
 
 
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useUserContext } from '../../../context/UserContext'
 import { useEffect, useState } from 'react'
 
@@ -40,9 +40,8 @@ const NavBar = () => {
     // USE CONTEXT DEL USER
     const { user , setUser} = useUserContext()
 
-
-
-
+    // Navigate
+    const navigate = useNavigate()
 
     // USE EFFECT PARA CONTROLAR EL SCROLLING
     useEffect(() => {

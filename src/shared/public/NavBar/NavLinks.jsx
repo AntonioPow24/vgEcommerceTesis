@@ -17,12 +17,12 @@ const NavLinks = ({navLinksStyle , linksClient , dropDowns, setDropDowns ,handle
 
                     
                         <NavLink 
-                            className='flex  gap-2 items-center justify-center '
+                            className={ ({isActive}) => `flex  gap-2 items-center justify-center navBarLink ${isActive? 'navLinkActive' : 'text-text-white' }`}
                             
                             to={`/${link === 'inicio'? '' : link === 'tienda'? `tienda/siliconas` :link}`}
                         >
                             <span 
-                                className='capitalize text-text-white text-2xl'
+                                className='capitalize  text-2xl'
 
                             >
                                 {link}

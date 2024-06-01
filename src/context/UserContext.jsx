@@ -5,7 +5,7 @@ const UserContext = createContext()
 
 const UserContextProvider = ({ children }) => {
 
-    const {user, setUser} = useState( null )
+    const [user, setUser] = useState( null )
 
 
     return (

@@ -1,12 +1,16 @@
-import { Outlet } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
 
 import Footer from '../shared/public/Footer/Footer'
 import NavBar from '../shared/public/NavBar/NavBar'
 
 
 import CartContextProvider from '../context/CartContext'
+import { useUserContext } from '../context/UserContext'
 
 const PublicLayout = () => {
+
+  const {user} = useUserContext()
+
   return (
 
     <CartContextProvider>
@@ -14,7 +18,7 @@ const PublicLayout = () => {
       <div>
 
         <NavBar />
-          <Outlet />
+          {user && user.name === 'admin'? <Navigate to={'/admin'}/> : <Outlet /> } 
         <Footer />
 
       </div>
