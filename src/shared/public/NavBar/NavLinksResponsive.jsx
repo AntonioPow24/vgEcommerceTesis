@@ -1,10 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { categoryProducts } from '../../../data/categoryProducts';
 
 
 const NavLinksResponsive = ({ navLinkResponsiveStyle, linksClient, handleMenuClose }) => {
 
+    
+    const navigate = useNavigate();
 
+    // Funcion redireccionar
+    const handleLinkClick = (link) => {
+        if (link === 'tienda') {
+            navigate(`/tienda/${categoryProducts[0]}`);
+        }
+        handleMenuClose()
+    }; 
 
 
     return (
@@ -13,8 +23,8 @@ const NavLinksResponsive = ({ navLinkResponsiveStyle, linksClient, handleMenuClo
                 {linksClient.map((link) => (
                     <li key={link} className="my-4">
                         <Link 
-                            href={`/${link === 'inicio' ? '' : link === 'tienda' ? 'tienda/siliconas' : link}`}
-                            onClick={() => handleMenuClose()}
+                            to={`/${ link === 'inicio' ? '' : link }`}
+                            onClick={ () => handleLinkClick(link)}
                         >
                             <span className="text-3xl text-white capitalize hover:text-skyBlueApp transition duration-300">
                                 {link}

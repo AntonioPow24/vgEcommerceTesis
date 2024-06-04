@@ -1,11 +1,22 @@
 
 
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { dropDownLinks } from './NavBar'
 import DropDown from './DropDown'
+import { categoryProducts } from '../../../data/categoryProducts';
 
 
 const NavLinks = ({navLinksStyle , linksClient , dropDowns, setDropDowns ,handleDropDown}) => {
+
+    const navigate = useNavigate();
+
+    // Funcion redireccionar
+    const handleLinkClick = (link) => {
+        if (link === 'tienda') {
+            navigate(`/tienda/${categoryProducts[0]}`);
+        }
+    }; 
+
   return (
     <div className={`laptopMin:flex items-center ${navLinksStyle}`}>
         <ul className='flex   gap-16 font-normal'>
@@ -19,7 +30,8 @@ const NavLinks = ({navLinksStyle , linksClient , dropDowns, setDropDowns ,handle
                         <NavLink 
                             className={ ({isActive}) => `flex  gap-2 items-center justify-center navBarLink ${isActive? 'navLinkActive' : 'text-text-white' }`}
                             
-                            to={`/${link === 'inicio'? '' : link === 'tienda'? `tienda/siliconas` :link}`}
+                            to={`/${ link === 'inicio'? '' : link }`}
+                            onClick={ () => handleLinkClick( link )}
                         >
                             <span 
                                 className='capitalize  text-2xl'

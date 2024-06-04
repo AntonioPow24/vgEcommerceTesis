@@ -1,5 +1,5 @@
 import './home.css'
-import { itemSubTotal} from '../../../utils/cart/subTotalCartCalculate'
+import { calculatePrice} from '../../../utils/cart/subTotalCartCalculate'
 import Button from '../../../shared/Button'
 
 
@@ -7,7 +7,7 @@ const MarketingCard = ({dataProduct}) => {
 
   // Destructurar el dataProduct
 
-  const {id,title,img,price, discount} = dataProduct
+  const {id,titleName,img,price, discount} = dataProduct
 
 
   // Estilos para el maquetado
@@ -19,16 +19,16 @@ const MarketingCard = ({dataProduct}) => {
   return (
     <article className={`${containerStyle}`}>
       <div className="flex max-w-[140px] min-w-[50px]">
-        <img className='object-cover' src={img} alt={`imagen de ${title}`} />
+        <img className='object-cover' src={img} alt={`imagen de ${titleName}`} />
       </div>
 
       <div className="flex flex-col justify-between py-2">
         <div className='mt-6 flex flex-col gap-4 bigPhone:mt-0 '>
-          <h3 className='text-textDark  text-[17px] text-center font-bold bigPhone:text-[14px]'>{title}</h3>
+          <h3 className='text-textDark  text-[17px] text-center font-bold bigPhone:text-[14px]'>{titleName}</h3>
 
           <div className="flex gap-3 items-center justify-center">
 
-            <span className='text-2xl bigPhone:text-xl'>{`S/ ${itemSubTotal(dataProduct).toFixed(2)}`}</span>
+            <span className='text-2xl bigPhone:text-xl'>{`S/ ${calculatePrice(dataProduct).toFixed(2)}`}</span>
 
             <div className="flex items-center justify-center bg-red-400 rounded-full w-10 h-10">
 

@@ -3,80 +3,81 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 
 // ARREGLO DEL CARRITO( SOLO ES REFERENCIA)
-const defaultCart = [
-    {
-      id: 1,
-      img: "./images/siliconas/Silicona Dowsil.png",
-      title: "Silicona Dowsil 300gr SuperPegamento 4rt5skr",
-      price: 13,
-      quantity: 1,
-      discount: 18,
-      valorate:2
-    },
-    {
-      id: 2,
-      img: "./images/siliconas/Silicona Dowsil.png",
-      title: "Silicona Dowsil 300gr SuperPegamento 4rt5skr",
-      price: 13,
-      quantity: 1,
-      discount: 28,
-      valorate:8
-    },
-    {
-      id: 3,
-      img: "./images/siliconas/Silicona Dowsil.png",
-      title: "Silicona Dowsil 300gr SuperPegamento 4rt5skr",
-      price: 13,
-      quantity: 1,
-      discount: 18,
-      valorate:5
-    },
-    {
-      id: 4,
-      img: "./images/siliconas/Silicona Dowsil.png",
-      title: "Silicona Dowsil 300gr SuperPegamento 4rt5skr",
-      price: 13,
-      quantity: 1,
-      discount: 18,
-      valorate:7
-    },
-    {
-      id: 5,
-      img: "./images/siliconas/Silicona Dowsil.png",
-      title: "Silicona Dowsil 300gr SuperPegamento 4rt5skr",
-      price: 13,
-      quantity: 1,
-      discount: 18,
-      valorate:4
-    },
-    {
-      id: 6,
-      img: "./images/siliconas/Silicona Dowsil.png",
-      title: "Silicona Dowsil 300gr SuperPegamento 4rt5skr",
-      price: 13,
-      quantity: 1,
-      discount: 18,
-      valorate:7
-    },
-    {
-      id: 7,
-      img: "./images/siliconas/Silicona Dowsil.png",
-      title: "Silicona Dowsil 300gr SuperPegamento 4rt5skr",
-      price: 13,
-      quantity: 1,
-      discount: 18,
-      valorate:7
-    },
-    {
-      id: 8,
-      img: "./images/siliconas/Silicona Dowsil.png",
-      title: "Silicona Dowsil 300gr SuperPegamento 4rt5skr",
-      price: 13,
-      quantity: 1,
-      discount: 18,
-      valorate:3
-    }
-  ]
+// const defaultCart = [
+//     {
+//       id: 1,
+//       img: "/public/images/banca/plin.png",
+//       title: "Silicona Dowsil 300gr SuperPegamento 4rt5skr",
+//       price: 13,
+//       quantity: 1,
+//       discount: 18,
+//       valorate:2
+//     },
+//     {
+//       id: 2,
+//       img: "./images/siliconas/Silicona Dowsil.png",
+//       title: "Silicona Dowsil 300gr SuperPegamento 4rt5skr",
+//       price: 13,
+//       quantity: 1,
+//       discount: 28,
+//       valorate:8
+//     },
+//     {
+//       id: 3,
+//       img: "./images/siliconas/Silicona Dowsil.png",
+//       title: "Silicona Dowsil 300gr SuperPegamento 4rt5skr",
+//       price: 13,
+//       quantity: 1,
+//       discount: 18,
+//       valorate:5
+//     },
+//     {
+//       id: 4,
+//       img: "./images/siliconas/Silicona Dowsil.png",
+//       title: "Silicona Dowsil 300gr SuperPegamento 4rt5skr",
+//       price: 13,
+//       quantity: 1,
+//       discount: 18,
+//       valorate:7
+//     },
+//     {
+//       id: 5,
+//       img: "./images/siliconas/Silicona Dowsil.png",
+//       title: "Silicona Dowsil 300gr SuperPegamento 4rt5skr",
+//       price: 13,
+//       quantity: 1,
+//       discount: 18,
+//       valorate:4
+//     },
+//     {
+//       id: 6,
+//       img: "./images/siliconas/Silicona Dowsil.png",
+//       title: "Silicona Dowsil 300gr SuperPegamento 4rt5skr",
+//       price: 13,
+//       quantity: 1,
+//       discount: 18,
+//       valorate:7
+//     },
+//     {
+//       id: 7,
+//       img: "./images/siliconas/Silicona Dowsil.png",
+//       title: "Silicona Dowsil 300gr SuperPegamento 4rt5skr",
+//       price: 13,
+//       quantity: 1,
+//       discount: 18,
+//       valorate:7
+//     },
+//     {
+//       id: 8,
+//       img: "./images/siliconas/Silicona Dowsil.png",
+//       title: "Silicona Dowsil 300gr SuperPegamento 4rt5skr",
+//       price: 13,
+//       quantity: 1,
+//       discount: 18,
+//       valorate:3
+//     }
+//   ]
+const defaultCart = []
 
 
 const CartContext = createContext()
@@ -136,6 +137,33 @@ const CartContextProvider = ({children}) =>{
         }
     })
 
+    // Funcion para agregar un producto al Preview Carrito
+    const addProductToCart = ( product ) => {
+      setCart( prevCart => {
+
+        const existingProduct = prevCart.find( item => item.id === product.id )
+        
+        if( existingProduct ){
+          const updatedCart = prevCart.map( item => 
+            item.id === product.id 
+              ? { ...item, quantity: item.quantity + 1 }
+              : item
+          )
+          
+          localStorage.setItem( 'previewCart', JSON.stringify( updatedCart ) )
+          return updatedCart
+
+        } else {
+          const updatedCart = [ ...prevCart, { ...product, quantity: 1 } ]
+
+          localStorage.setItem( 'previewCart', JSON.stringify( updatedCart ) )
+          return updatedCart
+        }
+
+      })
+
+      console.log(cart);
+    }
 
 
 
@@ -155,7 +183,7 @@ const CartContextProvider = ({children}) =>{
 
     return (
 
-        <CartContext.Provider value={{cart , setCart ,increaseProductCount , decreaseProductCount,deleteProduct}}>
+        <CartContext.Provider value={{cart , setCart ,increaseProductCount , decreaseProductCount,deleteProduct,addProductToCart}}>
             {children}
         </CartContext.Provider>
     )

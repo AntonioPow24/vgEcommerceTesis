@@ -8,11 +8,11 @@ import { useCartContext } from '../../../context/CartContext'
 import './previewCart.css'
 
 
-const PreviewCartContainer = ({setCartModal}) => {
+const PreviewCartContainer = ({ setCartModal }) => {
 
 
     // Destrucutracion del CartContext
-    const {cart} = useCartContext()
+    const { cart } = useCartContext()
 
     // Estilos para el Contenedor Preview Carrito   
     const containerStyle = 'w-[500px] z-20 flex flex-col bg-appBgWhite  bigPhone:w-[390px] '
@@ -47,7 +47,7 @@ const PreviewCartContainer = ({setCartModal}) => {
             {
                 cart.length? 
                     cart.map(itemCart => 
-                        <PreviewCartItem classComponent={paddingStyle} key={itemCart.id} itemCart={itemCart} />
+                        <PreviewCartItem classComponent={paddingStyle} key={itemCart.id} itemCart={ itemCart } />
                 )
 
                 :

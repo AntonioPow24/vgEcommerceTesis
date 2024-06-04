@@ -2,13 +2,13 @@
 const findTopTwoProducts = (data) => {
     if(data.length <= 2) return data
 
-    // Ordenar el array por valorate, en caso de empate, por precio
+    // Ordenar el array por reviews, en caso de empate, por precio
     data.sort((a,b) => {
-        if(a.valorate === b.valorate){
+        if(a.reviews === b.reviews){
             return b.price - a.price
         }
 
-        return b.valorate - a.valorate
+        return b.reviews - a.reviews
     })
 
     return data.slice(0,2)

@@ -30,6 +30,7 @@ module.exports = {
         'bgContactHeader':'#4E57A6',
         'formContactBg':'#DDE1E2',
         'projectBg':'#43424256',
+        'productCardBg':'#B5BFC9',
 
       },
     },
@@ -102,6 +103,7 @@ module.exports = {
       '1500to1650': {'min': '1500px', 'max': '1650px'},
       '849to1480': {'min': '849px', 'max': '1480px'},
       '730to1500': {'min': '730px', 'max': '1500px'},
+      '730to849': {'min': '730px', 'max': '849px'},
     }
   },
   plugins: [],

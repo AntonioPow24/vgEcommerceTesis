@@ -11,6 +11,7 @@ import Shop from '../pages/Shop'
 import Contact from '../pages/Contact'
 import MyShopping from "../pages/MyShopping";
 import ShopCategory from "../pages/ShopCategory";
+import ProductDetail from "../pages/ProductDetail";
 
 export const router = createBrowserRouter([
     {
@@ -29,21 +30,27 @@ export const router = createBrowserRouter([
                 path:'/servicios',
                 element: <Services />
             },
+            
             {
                 path:'/tienda',
-                element: <Shop />
+                element: <Shop />,
             },
             {
                 path:'/tienda/:category',
-                element: <ShopCategory />
+                element: <ShopCategory />,
             },
+            {
+                path:'/tienda/:category/:productId',
+                element: <ProductDetail />
+            },
+
             {
                 path:'/contacto',
                 element: <Contact />
             },
             {
                 path:'/misCompras',
-                element: <MyShopping />
+                element: <MyShopping />,
             },
         ]
     },

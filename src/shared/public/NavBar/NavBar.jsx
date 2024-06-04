@@ -82,7 +82,7 @@ const NavBar = () => {
 
 
     // Arreglo de Links
-    const linksClient = ['inicio','proyectos','servicios','tienda','contacto']
+    const linksClient = ['inicio','proyectos','tienda','contacto']
     
 
 

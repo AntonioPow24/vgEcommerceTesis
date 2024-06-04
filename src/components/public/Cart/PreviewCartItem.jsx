@@ -7,13 +7,11 @@ import { useCartContext } from '../../../context/CartContext'
 
 
 
-const PreviewCartItem = ({classComponent ,itemCart}) => {
+const PreviewCartItem = ({classComponent , itemCart}) => {
+
+  const { id, titleName, img, price, quantity, discount }= itemCart
 
 
-
-  // Destructuracion del itemCart
-  const {id, img, title, price, quantity , discount} = itemCart
- 
   // Destructuracion del CartContext
   const {increaseProductCount,decreaseProductCount,deleteProduct} = useCartContext()
 
@@ -31,15 +29,15 @@ const PreviewCartItem = ({classComponent ,itemCart}) => {
   return (
     <article className={`${classComponent} flex gap-5 previewCartItem`}>
 
-      <div className={`${flexAllCenter} max-w-[75px] `}>
-        <img src={img} alt="" />
+      <div className={`${flexAllCenter} max-w-[75px] w-full`}>
+        <img src={img} alt="" className='w-full'/>
       </div>
 
       <div className="flex flex-col flex-1 justify-between py-[2px] gap-3">
         <div className="flex items-start justify-between">
           <div className='flex flex-col '>
 
-            <span className='text-textDark text-[14px] font-medium'>{title}</span>
+            <span className='text-textDark text-[14px] font-medium'>{ titleName }</span>
             <span className='text-text-blueClient text-[12px]'>Este producto tiene descuento del {discount}%</span>
           </div>
           <Button 
