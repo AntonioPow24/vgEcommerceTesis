@@ -8,7 +8,7 @@ import { useNavigateTo } from '../../../hooks/useNavigateTo'
 
 
 
-const PreviewCartContinue = ({dataCart,handleClosePreviewCart}) => {
+const PreviewCartContinue = ({dataCart,toggleCart}) => {
 
   // USEROUTER
   const navigate = useNavigate()
@@ -39,7 +39,7 @@ const PreviewCartContinue = ({dataCart,handleClosePreviewCart}) => {
 
     if(dataCart.length){
       useNavigateTo( navigate, path )
-      handleClosePreviewCart()
+      toggleCart()
     }
   }
   

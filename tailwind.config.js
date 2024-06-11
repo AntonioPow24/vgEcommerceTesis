@@ -20,6 +20,7 @@ module.exports = {
         'popUpDropDown':'#171717B3',
         'categorySelected':'#54BFE1B2',
         'logOut':'#F17777',
+        'success':'#2EBE45',
         'skyBlueApp':'#54BFE1',
 
         'appBgWhite':'#EEE',
@@ -104,6 +105,7 @@ module.exports = {
       '849to1480': {'min': '849px', 'max': '1480px'},
       '730to1500': {'min': '730px', 'max': '1500px'},
       '730to849': {'min': '730px', 'max': '849px'},
+      '730to1070': {'min': '730px', 'max': '1070px'},
     }
   },
   plugins: [],

@@ -14,8 +14,8 @@ const DropDown = ({setDropDowns , toElement=''}) => {
 
 
     const profileLinks = [
-            {icon:'wrench', title:'configuracion'} ,
-            {icon:'clock-rotate-left', title:'misCompras'} ,
+            {icon:'wrench', title:'configuracion', path:'configuration'} ,
+            {icon:'clock-rotate-left', title:'misCompras', path:'shopping'} ,
             {icon:'power-off', title:'cerrar sesion'} ,
     ]
 
@@ -101,7 +101,7 @@ const DropDown = ({setDropDowns , toElement=''}) => {
                         :
                         <Link
                             className= {`${itemStyle}  flex items-center gap-2 text-base hover:bg-categorySelected hover:text-textDark`} 
-                            href={`/${profileLink.title}`}
+                            to={`/${profileLink.path}`}
                             key={profileLink.title}
                             onClick={closeDropDown}
                         >

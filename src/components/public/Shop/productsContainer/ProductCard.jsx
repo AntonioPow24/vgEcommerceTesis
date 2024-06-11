@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Button from '../../../../shared/Button'
 import { useCartContext } from '../../../../context/CartContext'
-const ProductCard = ({ product, showToastMessage }) => {
+const ProductCard = ({ product, showToastMessage, openCart }) => {
 
     const { addProductToCart } = useCartContext()
     
@@ -11,7 +11,8 @@ const ProductCard = ({ product, showToastMessage }) => {
     // Funcion Agregar al Carrito
     const handleAddToCart = () => {
         addProductToCart( product )
-        showToastMessage( `${titleName} ${id}` , 'Producto agregado al carrito' )
+        // showToastMessage( `${titleName} ${id}` , 'Producto agregado al carrito' )
+        openCart()
     }
 
 

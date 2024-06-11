@@ -88,6 +88,9 @@ const CartContextProvider = ({children}) =>{
     //Estado para manejar la cantidad de Productos en el Preview Carrito
     const [cart, setCart] = useState([])
 
+    // Estado para el Modal del cart
+    const [isCartModal , setIsCartModal] = useState(false)
+
 
     // Función para incrementar la cantidad de un producto
     const increaseProductCount = (productId) => {
@@ -162,7 +165,22 @@ const CartContextProvider = ({children}) =>{
 
       })
 
-      console.log(cart);
+    }
+
+
+
+
+    // Funcions Cart modal
+    const openCart = () => {
+      setIsCartModal( true )
+    }
+
+    const closeCart = () => {
+      setIsCartModal( false )
+    }
+
+    const toggleCart = () => {
+      setIsCartModal( prev => !prev )
     }
 
 
@@ -183,7 +201,7 @@ const CartContextProvider = ({children}) =>{
 
     return (
 
-        <CartContext.Provider value={{cart , setCart ,increaseProductCount , decreaseProductCount,deleteProduct,addProductToCart}}>
+        <CartContext.Provider value={{ cart , setCart ,increaseProductCount , decreaseProductCount,deleteProduct,addProductToCart, isCartModal, toggleCart, openCart, closeCart }}>
             {children}
         </CartContext.Provider>
     )

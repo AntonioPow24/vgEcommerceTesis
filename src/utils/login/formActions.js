@@ -29,8 +29,13 @@ const signInValidationRules = {
 const signUpValidationRules = {
   userName: {
     required: true,
-    maxLength: 15,
-    errorMessage: 'El nombre de usuario es requerido y no puede exceder los 15 caracteres',
+    maxLength: 25,
+    errorMessage: 'El nombre de usuario es requerido y no puede exceder los 25 caracteres',
+  },
+  lastName: {
+    required: true,
+    maxLength: 25,
+    errorMessage: 'El apellido de usuario es requerido y no puede exceder los 25 caracteres',
   },
   email: {
     required: true,

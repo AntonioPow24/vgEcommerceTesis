@@ -8,11 +8,11 @@ import { useCartContext } from '../../../context/CartContext'
 import './previewCart.css'
 
 
-const PreviewCartContainer = ({ setCartModal }) => {
+const PreviewCartContainer = () => {
 
 
     // Destrucutracion del CartContext
-    const { cart } = useCartContext()
+    const { cart, closeCart, toggleCart } = useCartContext()
 
     // Estilos para el Contenedor Preview Carrito   
     const containerStyle = 'w-[500px] z-20 flex flex-col bg-appBgWhite  bigPhone:w-[390px] '
@@ -21,9 +21,7 @@ const PreviewCartContainer = ({ setCartModal }) => {
 
     // Funciones
 
-    const handleClosePreviewCart =() =>{
-        setCartModal(prev => !prev)
-    }
+
 
 
 
@@ -39,7 +37,7 @@ const PreviewCartContainer = ({ setCartModal }) => {
             <h3 className='uppercase font-semibold'>mi carrito</h3>
             <i 
                 className="fa-solid fa-x cursor-pointer"
-                onClick={handleClosePreviewCart}
+                onClick={toggleCart}
             ></i>
         </div>
 
@@ -52,11 +50,11 @@ const PreviewCartContainer = ({ setCartModal }) => {
 
                 :
 
-                <PreviewCartEmpty  handleClosePreviewCart={handleClosePreviewCart}/>
+                <PreviewCartEmpty  toggleCart={toggleCart}/>
             }
         </main>
 
-        <PreviewCartContinue dataCart={cart} handleClosePreviewCart={handleClosePreviewCart} />  
+        <PreviewCartContinue dataCart={cart} toggleCart={toggleCart} />  
     </section>
   )
 }

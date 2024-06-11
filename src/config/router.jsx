@@ -12,6 +12,7 @@ import Contact from '../pages/Contact'
 import MyShopping from "../pages/MyShopping";
 import ShopCategory from "../pages/ShopCategory";
 import ProductDetail from "../pages/ProductDetail";
+import ConfigurationProfile from "../pages/ConfigurationProfile";
 
 export const router = createBrowserRouter([
     {
@@ -49,8 +50,12 @@ export const router = createBrowserRouter([
                 element: <Contact />
             },
             {
-                path:'/misCompras',
+                path:'/shopping',
                 element: <MyShopping />,
+            },
+            {
+                path:'/configuration',
+                element: <ConfigurationProfile/>,
             },
         ]
     },

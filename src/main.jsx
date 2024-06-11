@@ -6,20 +6,25 @@ import { RouterProvider } from 'react-router-dom'
 import { router } from './config/router'
 import UserContextProvider from './context/UserContext'
 import ProductsContextProvider from './context/ProductContext'
+import LoginContextProvider from './context/LoginContext'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     
-    <ProductsContextProvider>
+    <LoginContextProvider>
 
-      <UserContextProvider>
+      <ProductsContextProvider>
 
-        <RouterProvider router={router} />
-        
-      </UserContextProvider>
+        <UserContextProvider>
 
-    </ProductsContextProvider>
+          <RouterProvider router={router} />
+          
+        </UserContextProvider>
+
+      </ProductsContextProvider>
+      
+    </LoginContextProvider>
 
   </React.StrictMode>,
 )

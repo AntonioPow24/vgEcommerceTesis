@@ -14,14 +14,14 @@ import NavLinksResponsive from './NavLinksResponsive'
 import PreviewCartContainer from '../../../components/public/Cart/PreviewCartContainer'
 
 import './navBar.css'
+import { useLoginContext } from '../../../context/LoginContext'
+import { useCartContext } from '../../../context/CartContext'
 
 
 export const dropDownLinks = ['tienda']
 
 const NavBar = () => {
 
-    // ESTADO PARA MOSTRAR EL MODAL (Solo se necesita para el cart)
-    const [isCartModal , setIsCartModal] = useState(false)
 
     // Objeto Estados para los DropDowns
     const [dropDowns , setDropDowns] = useState({tiendaDropDown:false, profileDropDown:false, proyectosDropDown:false})
@@ -32,16 +32,22 @@ const NavBar = () => {
     //Estado para el menu de navegacion
     const [isMenuOpen , setIsMenuOpen]= useState(false)
 
-    // Estado para el componente Login
-    const [isLoginOpen , setIsLoginOpen] = useState( false )
 
 
+    // USE CONTEXT 
+    const { isLogin, openLogin, toggleLogin, closeLogin } = useLoginContext()
 
-    // USE CONTEXT DEL USER
     const { user , setUser} = useUserContext()
+
+    const { isCartModal, toggleCart } = useCartContext()
+
+
+
 
     // Navigate
     const navigate = useNavigate()
+
+
 
     // USE EFFECT PARA CONTROLAR EL SCROLLING
     useEffect(() => {
@@ -106,14 +112,7 @@ const NavBar = () => {
                 [`${type}DropDown`]: !dropDowns[`${type}DropDown`]
             }));
 
-        }
-    
-
-    // Funcion para mostrar el Modal del PREVIEW CART
-    const handleCartShow =()=>{
-        setIsCartModal(prev => !prev)
-    }
-    
+        }      
 
     //Funcion para Abrir o Cerrar el icono MENU
     const toggleMenu = () =>{
@@ -128,7 +127,7 @@ const NavBar = () => {
             return
         }
 
-        setIsLoginOpen( true )
+        openLogin()
     }
 
 
@@ -201,16 +200,16 @@ const NavBar = () => {
                     <div>
                         <i 
                             className=" text-3xl fa-solid fa-cart-shopping cursor-pointer"
-                            onClick={handleCartShow}
+                            onClick={ toggleCart }
                         ></i>
 
                         {isCartModal && 
                             //MODAL DEL PREVIEW CARRITO
                             <Modal 
-                                setIsModal={setIsCartModal} 
+                                toggleModal={ toggleCart } 
                                 isModal={isCartModal}
                             > 
-                                <PreviewCartContainer setCartModal={setIsCartModal}/> 
+                                <PreviewCartContainer /> 
                             </Modal>
 
                         }
@@ -223,7 +222,7 @@ const NavBar = () => {
                         <i className="text-3xl fa-regular fa-circle-user"></i>
                         <span className='text-xl smallPhone:hidden'> 
                             {
-                                user ? user.name : 'Iniciar Sesion'
+                                user ? user.userName : 'Iniciar Sesion'
 
                             }
                         </span>
@@ -244,7 +243,7 @@ const NavBar = () => {
 
         </nav>
         {
-            isLoginOpen && <LoginContainer closeLoginContainer={() => setIsLoginOpen(false)} />
+            isLogin && <LoginContainer closeLoginContainer={ closeLogin } />
         }
     </>
   )

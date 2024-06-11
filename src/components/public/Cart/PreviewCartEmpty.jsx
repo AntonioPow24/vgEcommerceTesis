@@ -6,13 +6,13 @@ import Button from '../../../shared/Button'
 import { useNavigateTo } from '../../../hooks/useNavigateTo'
 import { useNavigate } from 'react-router-dom'
 
-const PreviewCartEmpty = ({handleClosePreviewCart}) => {
+const PreviewCartEmpty = ({toggleCart}) => {
 
   const navigate = useNavigate()
 
   const handleNavigate = (path) =>{
     useNavigateTo ( navigate, path )
-    handleClosePreviewCart()
+    toggleCart()
   }
 
   return (

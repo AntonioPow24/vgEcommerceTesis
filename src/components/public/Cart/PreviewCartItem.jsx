@@ -13,7 +13,7 @@ const PreviewCartItem = ({classComponent , itemCart}) => {
 
 
   // Destructuracion del CartContext
-  const {increaseProductCount,decreaseProductCount,deleteProduct} = useCartContext()
+  const { increaseProductCount, decreaseProductCount, deleteProduct } = useCartContext()
 
 
 

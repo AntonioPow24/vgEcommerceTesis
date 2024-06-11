@@ -75,7 +75,7 @@ const SignInUpForm = ({inputs , title, btnTitle, formType='signIn'}) => {
       className={`flex justify-center items-center flex-col gap-[20px] signForm ${formType} `}
       onSubmit={ handleSubmit }
     >
-      <h2 className='title text-4xl text-text-white font-bold'>{ title } {userInput && userInput.userName}</h2>
+      <h2 className='title text-4xl text-text-white font-bold'>{ title }</h2>
 
       {
         inputs && 

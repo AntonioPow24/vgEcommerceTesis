@@ -3,6 +3,7 @@ import LoginPanel from './LoginPanel'
 import { useState } from 'react'
 import Button from '../../../shared/Button'
 
+
 import './LoginContainer.css'
 
 const LoginContainer = ({ closeLoginContainer }) => {
@@ -41,13 +42,21 @@ const LoginContainer = ({ closeLoginContainer }) => {
     {
       id:2,
       type:'text',
+      placeholder:'Apellidos',
+      iconClass: 'fas fa-user',
+      name:'lastName',
+      autoComplete: 'lastName' 
+    },
+    {
+      id:3,
+      type:'text',
       placeholder:'Correo de usuario',
       iconClass: 'fas fa-envelope',
       name:'email',
       autoComplete: 'email'
     },
     {
-      id:3,
+      id:4,
       type:'password',
       placeholder:'Contraseña',
       iconClass: 'fa-solid fa-lock',
@@ -90,7 +99,7 @@ const LoginContainer = ({ closeLoginContainer }) => {
               title='Aun no tienes una cuenta?'
               paragraph='Crea una cuenta y empieza a comprar nuestros productos!'
               buttonTitle='Registrarme'
-              srcImg='./images/login/register.svg'
+              srcImg='https://i.imgur.com/wel2jan.png'
               clickEvent={changeLoginPanel}
             />
 
@@ -100,7 +109,7 @@ const LoginContainer = ({ closeLoginContainer }) => {
               title='Ya tienes una cuenta?'
               paragraph='Ingresa con tus credenciales y empieza a comprar!'
               buttonTitle='Iniciar Sesion'
-              srcImg='./images/login/login.svg'
+              srcImg='https://i.imgur.com/wGnnX0t.png'
               clickEvent={changeLoginPanel}
             />
 
