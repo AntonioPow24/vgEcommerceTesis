@@ -16,7 +16,9 @@ const filterConfigArray = [
 const ConfigMainContainer = () => {
 
     const [ filterConfig, setFilterConfig ] = useState('personalData')
-    
+
+
+
 
     // Functions
     const changeFilter = ( filter ) => {

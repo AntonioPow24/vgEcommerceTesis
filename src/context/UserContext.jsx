@@ -7,6 +7,7 @@ const userTest = {
     idUser: 'use23',
     userName: 'Antonio',
     lastName:'Garcia Romero',
+    password:'Antonio2401',
     address:'',
     phoneNumber: undefined,
     email:'garciaromeroantonio@gmail.com',
@@ -17,12 +18,16 @@ const userTest = {
 
 const UserContextProvider = ({ children }) => {
 
-    const [user, setUser] = useState( null )
+    const [user, setUser] = useState( userTest )
 
+
+    const getCurrentPassword = () => {
+        return user.password
+    }
 
 
     return (
-        <UserContext.Provider value={ {user, setUser} }>
+        <UserContext.Provider value={ {user, setUser, getCurrentPassword} }>
             { children }
         </UserContext.Provider>
     )

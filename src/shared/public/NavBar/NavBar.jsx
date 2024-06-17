@@ -1,7 +1,7 @@
 
 
 
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useUserContext } from '../../../context/UserContext'
 import { useEffect, useState } from 'react'
 
@@ -43,9 +43,6 @@ const NavBar = () => {
 
 
 
-
-    // Navigate
-    const navigate = useNavigate()
 
 
 

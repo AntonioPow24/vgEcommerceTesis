@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import { useUserContext } from '../../../../context/UserContext'
 import InputConfig from './InputConfig'
 import Button from '../../../../shared/Button'
 import useUserUpdate from '../../../../hooks/userHooks/useUserUpdate'
 import LineMessage from '../../../../shared/LineMessage'
 import LoadingSpinner from '../../../../shared/LoadingSpinner'
+
+import TitleSectionConfig from '../TitleSectionConfig'
+
 
 const PersonalData = () => {
 
@@ -70,9 +72,7 @@ const PersonalData = () => {
   return (
     <section className='flex flex-col gap-[20px] mb-5 pr-[200px] 1570:pr-[5%]'>
 
-      <div className="flex justify-start mb-[10px]">
-        <h3 className='text-text-white text-4xl 1070:text-2xl'>Datos personales</h3>
-      </div>
+    <TitleSectionConfig title={'Datos personales'} />
 
       <div className="flex flex-wrap gap-[70px] justify-between">
 
@@ -80,10 +80,11 @@ const PersonalData = () => {
 
           <InputConfig  
             {...input} 
-            value={ updateUserState[input.name] }
+            value={ updateUserState[ input.name] }
             key={ input.id }
             onChange={ onChangeUpdateuser }
-          /> 
+          />
+           
         )}
 
       </div>
@@ -108,7 +109,7 @@ const PersonalData = () => {
         </Button>
       </div>
 
-      { error && <LineMessage message={ 'hola a todos' } type={'error'} style={'text-center'} />}
+      { error && <LineMessage message={ 'Error al guardar los cambios' } type={'error'} style={'text-center'} />}
     </section>
 
   )
