@@ -15,10 +15,22 @@ const userTest = {
     requestList:[]
 }
 
+const userAdmi = {
+    idUser: 'admin123',
+    userName: 'admin',
+    lastName:'Garcia Romero',
+    password:'Antonio2401',
+    address:'',
+    phoneNumber: undefined,
+    email:'garciaromeroantonio@gmail.com',
+    useRole:'user',
+    requestList:[]
+}
+
 
 const UserContextProvider = ({ children }) => {
 
-    const [user, setUser] = useState( userTest )
+    const [user, setUser] = useState( userAdmi )
 
 
     const getCurrentPassword = () => {

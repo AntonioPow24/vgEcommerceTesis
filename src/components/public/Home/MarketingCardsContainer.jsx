@@ -18,7 +18,7 @@ const MarketingCardsContainer = () => {
 
   // Estilos para el Maquetado
   const containerStyle= 'bg-appBgBlack px-[132px] 685:px-[10px]  flex justify-center  py-[52px] '
-  const buttonStyle ='px-[33px] flex items-center justify-center  rounded-[10px] text-xl py-[10px] gap-[12px] w-[210px] transitionn-all duration-300 bigPhone:w-[260px]'
+  const buttonStyle ='px-[25px] flex items-center justify-center  rounded-[10px] text-xl py-[10px] gap-[12px] w-[210px] transitionn-all duration-300 bigPhone:w-[260px]'
 
 
 

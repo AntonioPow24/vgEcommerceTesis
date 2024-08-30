@@ -18,7 +18,7 @@ const PublicLayout = () => {
       <div>
 
         <NavBar />
-          {user && user.name === 'admin'? <Navigate to={'/admin'}/> : <Outlet /> } 
+          {user && user.idUser === 'admin123'? <Navigate to={'/admin'}/> : <Outlet /> } 
         <Footer />
 
       </div>

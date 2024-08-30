@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .optionStyle{
+        @apply block px-4 py-2 text-gray-800 dark:text-adminTextWhite hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300 capitalize ;
+    }
+    .theadProduct{
+        @apply text-[18px] text-adminTextDark dark:text-adminTextWhite py-4 transition-all duration-300
+    }
+  }
+

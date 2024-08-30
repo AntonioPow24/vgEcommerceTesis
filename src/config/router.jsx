@@ -14,6 +14,14 @@ import ShopCategory from "../pages/ShopCategory";
 import ProductDetail from "../pages/ProductDetail";
 import ConfigurationProfile from "../pages/ConfigurationProfile";
 
+
+import Dashboard from '../pages/private/Dashboard'
+import ProductsAdmin from '../pages/private/ProductsAdmin'
+import RequestsAdmin from '../pages/private/RequestsAdmin'
+import ReportsAdmin from '../pages/private/ReportsAdmin'
+import ProjectsAdmin from '../pages/private/ProjectsAdmin'
+import UsersAdmin from '../pages/private/UsersAdmin'
+
 export const router = createBrowserRouter([
     {
         path:'/',
@@ -62,7 +70,33 @@ export const router = createBrowserRouter([
 
     {
         path:'/admin',
-        element: <PrivateLayout />
+        element: <PrivateLayout />,
+        children: [
+            {
+                index:true,
+                element: <Dashboard />
+            },
+            {
+                path:'productsAdmin',
+                element: <ProductsAdmin />
+            },
+            {
+                path:'requestsAdmin',
+                element: <RequestsAdmin />
+            },
+            {
+                path:'reportsAdmin',
+                element: <ReportsAdmin />
+            },
+            {
+                path:'projectsAdmin',
+                element: <ProjectsAdmin />
+            },
+            {
+                path:'usersAdmin',
+                element: <UsersAdmin />
+            },
+        ]
     }
 
 ])

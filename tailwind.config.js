@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+
+
 module.exports = {
   content: [
     "./index.html",
@@ -16,6 +18,12 @@ module.exports = {
         'text-blueClient': '#505AB6',
         'textDark':'#272727',
         'textInputForm':'#636363',
+        'textWhiteTransparent':'#F9F9F9A8',
+        
+        'adminTextDark':'#404040',
+        'adminTextWhite':'#b8b7b7',
+        'adminTextPurple':'#9D78E5',
+
 
         'popUpDropDown':'#171717B3',
         'categorySelected':'#54BFE1B2',
@@ -23,16 +31,19 @@ module.exports = {
         'success':'#2EBE45',
         'skyBlueApp':'#54BFE1',
 
-        'appBgWhite':'#EEE',
-        'appBgBlack':'#282828',
 
+        'appBgWhite':'#EEE',
+        'appBgBlack':'#232323',
+        'adminBgWhite' : '#F5F5F5',
+        'adminBgContrast':'#DADDEB',
 
         'footerBg':'#05090B',
         'bgContactHeader':'#4E57A6',
         'formContactBg':'#DDE1E2',
         'projectBg':'#43424256',
         'productCardBg':'#B5BFC9',
-
+        'purpleElectricBg' :'#7040F9',
+        'dashboardPurpleBg' :'#6445BC',
       },
     },
 
@@ -108,5 +119,7 @@ module.exports = {
       '730to1070': {'min': '730px', 'max': '1070px'},
     }
   },
-  plugins: [],
+  darkMode:'class',
+  plugins: [
+  ],
 }

@@ -7,6 +7,7 @@ import { router } from './config/router'
 import UserContextProvider from './context/UserContext'
 import ProductsContextProvider from './context/ProductContext'
 import LoginContextProvider from './context/LoginContext'
+import DarkThemeContextProvider from './context/DarkThemeContext'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -17,8 +18,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <ProductsContextProvider>
 
         <UserContextProvider>
+          
+          <DarkThemeContextProvider>
 
-          <RouterProvider router={router} />
+            <RouterProvider router={router} />
+
+          </DarkThemeContextProvider>
           
         </UserContextProvider>
 

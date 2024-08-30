@@ -17,6 +17,8 @@ const ProductsContextProvider = ( { children } ) => {
 
     const findProductById = ( productId ) => products.find( product => product.id === productId)
 
+
+    
     return (
         <ProductsContext.Provider value={ { products, findProductById } } >
             { children }

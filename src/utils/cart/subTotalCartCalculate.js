@@ -1,6 +1,6 @@
 
 
-// Funcion Descuento
+// Funcion Descuento con item
 export const discountPrice = (item) => item.price - (item.price * (item.discount/100))
 
 //Funcion calcular subTotal del Item

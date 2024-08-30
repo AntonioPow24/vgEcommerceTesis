@@ -29,8 +29,8 @@ const PreviewCartItem = ({classComponent , itemCart}) => {
   return (
     <article className={`${classComponent} flex gap-5 previewCartItem`}>
 
-      <div className={`${flexAllCenter} max-w-[75px] w-full`}>
-        <img src={img} alt="" className='w-full'/>
+      <div className={`${flexAllCenter} max-w-[70px] w-full`}>
+        <img src={img} alt="" className='w-full  object-fill'/>
       </div>
 
       <div className="flex flex-col flex-1 justify-between py-[2px] gap-3">

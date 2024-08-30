@@ -64,3 +64,18 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#acb8e7",endCo
     0% { width: 100%; }
     100% { width: 0%; }
 }
+
+.cardDetail{
+    -webkit-box-shadow: -1px 1px 19px -4px rgba(46,46,46,1);
+    -moz-box-shadow: -1px 1px 19px -4px rgba(46,46,46,1);
+    box-shadow: -1px 1px 19px -4px rgba(46,46,46,1);
+}
+
+.buttonProductCartAdd:hover  .fa-cart-shopping{
+    right: 20px;
+    transition: all 0.3s;
+}
+.backContainerProductDetail:hover .backProductDetail,
+.backContainerProductDetail:hover .backTextProductDetail{
+    color:#a1a1a1
+}

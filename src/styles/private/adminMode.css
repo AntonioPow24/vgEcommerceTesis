@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
+
+*{
+    font-family: "Sen", sans-serif;
+}
+
+.active .iconLinkAdmin .fa-solid{
+    color: #7040F9;
+    font-size: 28px;
+}
+
+.dark .active .iconLinkAdmin .fa-solid{
+    color: #54BFE1;
+    font-size: 28px;
+}
+.active .linkName{
+    font-size: 20px;
+}
